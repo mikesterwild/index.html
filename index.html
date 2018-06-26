@@ -36,60 +36,7 @@ body{
 <h1 class = "text-center col ">S.T.I.D.E</h1>
 <p class ="text-center">Click <a href = "https://www.instagram.com/s.t.i.d.e/">this </a>for some fun.</p>
 <iframe style = "display: none" width="560" height="315" src="https://www.youtube.com/embed/n_ZRRlVDVa8?rel=0&autoplay=1enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-<svg class="defs">
-  <defs>
-    <path id="pause-button-shape"  d="M24,0C10.745,0,0,10.745,0,24s10.745,24,24,24s24-10.745,24-24S37.255,0,24,0z M21,33.064c0,2.201-1.688,4-3.75,4
-    s-3.75-1.799-3.75-4V14.934c0-2.199,1.688-4,3.75-4s3.75,1.801,3.75,4V33.064z M34.5,33.064c0,2.201-1.688,4-3.75,4
-    s-3.75-1.799-3.75-4V14.934c0-2.199,1.688-4,3.75-4s3.75,1.801,3.75,4V33.064z"/>
-    <path id="play-button-shape"  d="M24,0C10.745,0,0,10.745,0,24s10.745,24,24,24s24-10.745,24-24S37.255,0,24,0z M31.672,26.828l-9.344,9.344
-    C20.771,37.729,19.5,37.2,19.5,35V13c0-2.2,1.271-2.729,2.828-1.172l9.344,9.344C33.229,22.729,33.229,25.271,31.672,26.828z"/>
-  </defs>
-</svg>
 
-<div class="buttons">
-  <!-- if we needed to change height/width we could use viewBox here -->
-  <svg class="button" id="play-button">
-    <use xlink:href="#play-button-shape">
-  </svg>
-  <svg class="button" id="pause-button">
-    <use xlink:href="#pause-button-shape">
-  </svg>
-</div>
-<script>
- var player;
-
-// this function gets called when API is ready to use
-function onYouTubePlayerAPIReady() {
-  // create the global player from the specific iframe (#video)
-  player = new YT.Player('video', {
-    events: {
-      // call this function when player is ready to use
-      'onReady': onPlayerReady
-    }
-  });
-}
-
-function onPlayerReady(event) {
-  
-  // bind events
-  var playButton = document.getElementById("play-button");
-  playButton.addEventListener("click", function() {
-    player.playVideo();
-  });
-  
-  var pauseButton = document.getElementById("pause-button");
-  pauseButton.addEventListener("click", function() {
-    player.pauseVideo();
-  });
-  
-}
-
-// Inject YouTube API script
-var tag = document.createElement('script');
-tag.src = "//www.youtube.com/player_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-</script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
